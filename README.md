@@ -65,26 +65,33 @@ npm install
 ## Backend Setup
 
 ### Create and activate virtual environment (recommended)
+```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 .\venv\Scripts\activate   # Windows
-
+```
 ### Install dependencies
+```bash
 pip install -r requirements.txt
-
+```
 ### Run Flask server
+```bash
 python main.py
-
+```
 # Navigate to frontend directory
+```bash
 cd youtini-ai-frontend
-
+```
 # Install dependencies
+```bash
 npm install
-
+```
 # Start development server
+```bash 
 npm run dev
-
+```
 # Reccomended File Structure
+```bash
 youtini-star-wars-historian/
 ├── backend/
 │   ├── __init__.py
@@ -106,22 +113,25 @@ youtini-star-wars-historian/
 ├── .env
 ├── .gitignore
 └── README.md
-
+```
 
 # create your environment variables 
 
 ## Required
+```bash
 OPENAI_API_KEY=sk-your-key-here
 OPENAI_MODEL=gpt-4  # or gpt-3.5-turbo
-
+```
 ## Optional
+```bash
 FLASK_ENV=development
 FRONTEND_URL=http://localhost:5173
 MAX_TOKENS=1000
-
+```
 # Dependencies
 
 ## Backend
+```bash
 Flask==2.2.3
 Flask-Cors==3.0.10
 openai==0.27.0
@@ -129,8 +139,9 @@ python-dotenv==0.21.1
 beautifulsoup4==4.11.1
 requests==2.28.2
 lxml==4.9.2
-
+```
 ## Frontend
+```bash
   "dependencies": 
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -139,7 +150,7 @@ lxml==4.9.2
     "@types/react-dom": "^18.0.10",
     "typescript": "^4.9.5",
     "vite": "^4.1.0"
-
+```
 # License
 
 MIT License
