@@ -59,20 +59,20 @@ pip install -r requirements.txt
 # Install frontend dependencies
 cd youtini-ai-frontend
 npm install
- 
+ ```
 ## Usage
 
-### Backend Setup
-```bash
-# Create and activate virtual environment (recommended)
+## Backend Setup
+
+### Create and activate virtual environment (recommended)
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 .\venv\Scripts\activate   # Windows
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run Flask server
+### Run Flask server
 python main.py
 
 # Navigate to frontend directory
