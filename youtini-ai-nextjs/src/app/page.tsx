@@ -16,7 +16,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ question: input }),
+        body: JSON.stringify({ USER_QUESTION: input }),
       });
       const data = await res.json();
       setResponse(data.answer);
@@ -31,12 +31,12 @@ export default function Home() {
       <h1>Youtini Star Wars Historian</h1>
       <form onSubmit={handleSubmit}>
         <textarea
-          placeholder="Ask a lore question or paste an article..."
+          placeholder="Ask a Star Wars question..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           rows={8}
           cols={80}
-        ></textarea>
+        />
         <br />
         <button type="submit">Submit</button>
       </form>
