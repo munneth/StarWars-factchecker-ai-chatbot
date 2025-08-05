@@ -1,9 +1,8 @@
-// Youtini Star Wars AI Historian Frontend (React + Vite - TypeScript)
+'use client'
 
-import React, { useState, FormEvent } from 'react'
-import './App.css'
+import { useState, FormEvent } from 'react'
 
-const App: React.FC = () => {
+export default function Home() {
   const [input, setInput] = useState<string>('')
   const [response, setResponse] = useState<string | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
@@ -12,7 +11,7 @@ const App: React.FC = () => {
     e.preventDefault()
     setLoading(true)
     try {
-      const res = await fetch('http://localhost:5000/', {
+      const res = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -50,5 +49,3 @@ const App: React.FC = () => {
     </div>
   )
 }
-
-export default App

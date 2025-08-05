@@ -1,5 +1,7 @@
-/* App.css */
+@import "tailwindcss/preflight";
+@tailwind utilities;
 
+/* Custom styles for Youtini Star Wars Historian */
 body {
   background-color: #ffffff;
   font-family: 'Helvetica Neue', sans-serif;
