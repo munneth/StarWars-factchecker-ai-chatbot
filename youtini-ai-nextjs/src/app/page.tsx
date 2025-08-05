@@ -1,30 +1,30 @@
-'use client'
+"use client";
 
-import { useState, FormEvent } from 'react'
+import { useState, FormEvent } from "react";
 
 export default function Home() {
-  const [input, setInput] = useState<string>('')
-  const [response, setResponse] = useState<string | null>(null)
-  const [loading, setLoading] = useState<boolean>(false)
+  const [input, setInput] = useState<string>("");
+  const [response, setResponse] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
+      const res = await fetch("/api/llamaindex", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ question: input })
-      })
-      const data = await res.json()
-      setResponse(data.answer)
-    } catch (err) {
-      setResponse('Error fetching response.')
+        body: JSON.stringify({ question: input }),
+      });
+      const data = await res.json();
+      setResponse(data.answer);
+    } catch {
+      setResponse("Error fetching response.");
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   return (
     <div className="container">
@@ -36,7 +36,8 @@ export default function Home() {
           onChange={(e) => setInput(e.target.value)}
           rows={8}
           cols={80}
-        ></textarea><br />
+        ></textarea>
+        <br />
         <button type="submit">Submit</button>
       </form>
       {loading && <p>Loading...</p>}
@@ -47,5 +48,5 @@ export default function Home() {
         </div>
       )}
     </div>
-  )
+  );
 }
